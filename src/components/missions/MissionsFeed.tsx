@@ -1,4 +1,4 @@
-import { Rocket, Calendar, MapPin, ExternalLink, ChevronRight, Info } from "lucide-react";
+import { Rocket, Calendar, MapPin, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
 import { fetchUpcomingLaunches, fetchRecentLaunches, fetchLaunchDetails, type Launch } from "@/lib/api";
@@ -239,25 +239,6 @@ const MissionDetailsDialog = ({ missionId, open, onOpenChange }: { missionId: st
               </div>
             )}
 
-            <div className="flex gap-2 pt-4">
-              {mission.infoUrl && (
-                <Button variant="outline" size="sm" asChild>
-                  <a href={mission.infoUrl} target="_blank" rel="noopener noreferrer" className="gap-2">
-                    <Info className="w-4 h-4" />
-                    More Info
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                </Button>
-              )}
-              {mission.videoUrl && (
-                <Button variant="outline" size="sm" asChild>
-                  <a href={mission.videoUrl} target="_blank" rel="noopener noreferrer" className="gap-2">
-                    Watch Video
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                </Button>
-              )}
-            </div>
           </div>
         ) : (
           <div className="py-8 text-center text-muted-foreground">Failed to load mission details</div>

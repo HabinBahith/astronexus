@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Compass, Rocket, Satellite, Activity, Globe } from "lucide-react";
+import { ArrowRight, Compass, Rocket, Satellite, Newspaper, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageLayout } from "./PageLayout";
@@ -17,7 +17,7 @@ const Index = () => {
             <p className="text-lg text-muted-foreground max-w-3xl">
               Transforming complex space data into easy-to-understand, simple visual UI experiences. 
               Our mission is to make space exploration accessible to everyone by presenting intricate 
-              astronomical information, satellite tracking, space weather, and planetary data through 
+              astronomical information, satellite tracking, space news, and planetary data through 
               intuitive interfaces and interactive visualizations. Explore the cosmos with clarity and ease.
             </p>
           </div>
@@ -49,16 +49,16 @@ const Index = () => {
           <CardHeader>
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                <Activity className="w-5 h-5 text-primary" />
+                <Newspaper className="w-5 h-5 text-primary" />
               </div>
-              <CardTitle>Space Weather</CardTitle>
+              <CardTitle>Space News</CardTitle>
             </div>
-            <CardDescription>Monitor solar activity and space weather conditions</CardDescription>
+            <CardDescription>Stay updated with space news and weather conditions</CardDescription>
           </CardHeader>
           <CardContent>
             <Button asChild variant="outline" className="w-full">
               <Link to="/weather">
-                View Weather
+                View News
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             </Button>

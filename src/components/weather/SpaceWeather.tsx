@@ -1,4 +1,4 @@
-import { Activity, Sun, Wind, Zap, AlertTriangle, TrendingUp } from "lucide-react";
+import { Activity, Sun, Wind, Zap, AlertTriangle, TrendingUp, Newspaper } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { fetchSpaceWeather } from "@/lib/api";
@@ -223,8 +223,8 @@ export const SpaceWeather = () => {
     <section className="glass-panel p-6">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-alert-orange/20 flex items-center justify-center">
-            <Sun className="w-5 h-5 text-alert-orange" />
+          <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+            <Newspaper className="w-5 h-5 text-primary" />
           </div>
           <div>
             <h2 className="font-display text-lg font-bold tracking-wide">
