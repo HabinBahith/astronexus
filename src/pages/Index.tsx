@@ -124,9 +124,29 @@ const Index = () => {
             </Button>
           </CardContent>
         </Card>
-      </section>
-    </PageLayout>
-  );
-};
 
+
+     
+<Card className="glass-panel border border-border/50 hover:border-primary/50 transition-all">
+          <CardHeader>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                <Compass className="w-5 h-5 text-primary" />
+              </div>
+              <CardTitle>Telescope</CardTitle>
+            </div>
+            <CardDescription>Explore the vast Universe!</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button asChild variant="outline" className="w-full">
+              <Link to="/telescope">
+                Explore Telescope
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+            </Button>
+          </CardContent>
+        </Card>
+ </section>
+    </PageLayout>
+  );};
 export default Index;
