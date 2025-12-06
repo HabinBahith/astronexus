@@ -11,6 +11,7 @@ import Missions from "./pages/Missions";
 import AIExplainerPage from "./pages/AIExplainerPage";
 import Telescope from "./pages/Telescope";
 import Gallery from "./pages/Gallery";
+import Meteor from "./pages/Meteor";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/missions" element={<Missions />} />
           <Route path="/ai" element={<AIExplainerPage />} />      
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/meteor" element={<Meteor />} />
           <Route path="/telescope" element={<Telescope />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

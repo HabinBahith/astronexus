@@ -10,6 +10,7 @@ const navItems = [
   { id: "missions", label: "Missions", icon: Rocket, path: "/missions" },
   { id: "telescope", label: "Telescope", icon: Telescope, path: "/telescope" },
   { id: "gallery", label: "Gallery", icon: Images, path: "/gallery" },
+  { id: "meteor", label: "Meteor", icon: Globe2, path: "/meteor" },
   { id: "ai", label: "AI Explainer", icon: Brain, path: "/ai" },
 ];
 

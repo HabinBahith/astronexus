@@ -27,8 +27,43 @@ export const SpaceGallery = () => {
   const [hasSearched, setHasSearched] = useState(false);
 
   const handleSearch = async (query: string) => {
-    if (!query.trim()) {
-      setError("Please enter a search term");
+    const searchTerm = query.trim();
+    
+    // If empty, use default space search terms
+    if (!searchTerm) {
+      setLoading(true);
+      setError(null);
+      setHasSearched(true);
+      
+      try {
+        // Fetch images for default space topics
+        const defaultSearchTerms = ["galaxy", "nebula", "space"];
+        let allResults: GalleryImage[] = [];
+        
+        for (const term of defaultSearchTerms) {
+          const results = await fetchSpaceImages(term, source);
+          allResults = [...allResults, ...results];
+        }
+        
+        // Deduplicate by id + source
+        const seen = new Set<string>();
+        const unique = allResults.filter((img) => {
+          const key = `${img.source}-${img.id}`;
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
+        
+        setImages(unique);
+        applyFilters(unique, source, sortBy);
+      } catch (err) {
+        const message = err instanceof Error ? err.message : "Failed to fetch images";
+        setError(message);
+        setImages([]);
+        setFilteredImages([]);
+      } finally {
+        setLoading(false);
+      }
       return;
     }
 
@@ -37,7 +72,7 @@ export const SpaceGallery = () => {
     setHasSearched(true);
 
     try {
-      const results = await fetchSpaceImages(query, source);
+      const results = await fetchSpaceImages(searchTerm, source);
       setImages(results);
       applyFilters(results, source, sortBy);
     } catch (err) {
@@ -100,6 +135,12 @@ export const SpaceGallery = () => {
     setError(null);
     setHasSearched(false);
   };
+
+  // Auto-load default space images on mount
+  useEffect(() => {
+    handleSearch("");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="space-y-6">
