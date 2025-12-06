@@ -71,14 +71,14 @@ const Index = () => {
               <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
                 <Globe className="w-5 h-5 text-primary" />
               </div>
-              <CardTitle>Planets</CardTitle>
+              <CardTitle>Gallery</CardTitle>
             </div>
-            <CardDescription>Explore the solar system and learn about planets</CardDescription>
+            <CardDescription>Explore stunning images from NASA, ESA, and JWST. Search and filter to discover the universe.</CardDescription>
           </CardHeader>
           <CardContent>
             <Button asChild variant="outline" className="w-full">
-              <Link to="/planets">
-                Explore Planets
+              <Link to="/gallery">
+                Explore Images
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             </Button>

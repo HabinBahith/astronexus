@@ -1,4 +1,4 @@
-import { Satellite, Newspaper, Rocket, Brain, Menu, Globe2, Globe, Telescope, HouseIcon } from "lucide-react";
+import { Satellite, Activity, Rocket, Brain, Menu, Globe2, Globe, Telescope, HouseIcon, Images } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -6,10 +6,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 const navItems = [
   { id: "home", label: "Home", icon: HouseIcon, path: "/" },
   { id: "tracker", label: "ISS Tracker", icon: Satellite, path: "/tracker" },
-  { id: "weather", label: "Space News", icon: Newspaper, path: "/weather" },
+  { id: "weather", label: "Space News", icon: Activity, path: "/weather" },
   { id: "missions", label: "Missions", icon: Rocket, path: "/missions" },
-  { id: "planets", label: "PLANETS", icon: Globe2, path: "/planets" },
   { id: "telescope", label: "Telescope", icon: Telescope, path: "/telescope" },
+  { id: "gallery", label: "Gallery", icon: Images, path: "/gallery" },
   { id: "ai", label: "AI Explainer", icon: Brain, path: "/ai" },
 ];
 

@@ -9,8 +9,8 @@ import Tracker from "./pages/Tracker";
 import Weather from "./pages/Weather";
 import Missions from "./pages/Missions";
 import AIExplainerPage from "./pages/AIExplainerPage";
-import Planets from "./pages/Planets";
 import Telescope from "./pages/Telescope";
+import Gallery from "./pages/Gallery";
 
 const queryClient = new QueryClient();
 
@@ -25,8 +25,8 @@ const App = () => (
           <Route path="/tracker" element={<Tracker />} />
           <Route path="/weather" element={<Weather />} />
           <Route path="/missions" element={<Missions />} />
-          <Route path="/ai" element={<AIExplainerPage />} />
-          <Route path="/planets" element={<Planets />} />
+          <Route path="/ai" element={<AIExplainerPage />} />      
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/telescope" element={<Telescope />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
